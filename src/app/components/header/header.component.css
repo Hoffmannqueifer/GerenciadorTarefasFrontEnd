@@ -1,0 +1,19 @@
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.header{
+    justify-content: center;
+    height: 10%;
+}
+
+span{
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    text-shadow: #009900 3px 2.2px 7px;
+    padding-left: 1.2rem;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="badge">
+        <button class="buttonsPrincipais" mat-stroked-button color="secondary">Anotações <mat-icon>create</mat-icon> </button>
+        <button class="buttonsPrincipais" mat-stroked-button color="primary">Listagem de Feira <mat-icon>fastfood</mat-icon> </button>
+        <button class="buttonsPrincipais" (click)="finalizados()" mat-stroked-button style="color: #009900;"  matBadge="{{closed}}" matBadgeColor="warn">Tarefas Finalizadas <mat-icon>done_all</mat-icon></button>
+    </div>
+    <button (click)="createTarefa()" class="nova-tarefa mat-elevation-z8" mat-stroked-button color="primary">Nova Tarefa</button>
+
+    <div class="content" *ngFor="let item of list">
+        <mat-card class="mat-elevation-z8 " >
+            <p>Data para finalizar: {{item.dataParaFinalizar}}</p>
+            <mat-card-header>
+              <mat-card-title>{{item.titulo}}</mat-card-title>
+              <mat-card-subtitle>{{item.descricao}}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="actions">
+                <button (click)="finalizar(item)" mat-mini-fab style="background-color: #009900;">
+                    <mat-icon>done_outline</mat-icon>
+                </button>
+                <button routerLink="updatetarefa/{{item.id}}" mat-mini-fab  style="background-color: #0047b3;">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-stroked-button (click)="delete(item.id)" mat-mini-fab style="background-color: #cc0000;" >
+                    <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+          </mat-card>
+    </div>
+</div>

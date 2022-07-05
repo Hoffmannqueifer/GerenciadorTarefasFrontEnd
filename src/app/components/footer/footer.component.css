@@ -1,0 +1,8 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    justify-content: flex-end;
+    font-size: .8rem;
+    height: 5%;
+    text-shadow: #000 3px 2.2px 7px;
+}
