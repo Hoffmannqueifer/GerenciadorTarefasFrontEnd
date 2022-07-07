@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/gerenciadortarefas'
+  baseUrl: 'http://localhost:8080/gerenciadortarefas',
+  baseAnotacaoUrl: 'http://localhost:8080/anotacoes'
 };
 
 /*

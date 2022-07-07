@@ -1,0 +1,11 @@
+<form>
+    <h1>Bloco de anotações</h1>
+    <mat-form-field class="form" appearance="fill">
+        <mat-label>Escreva sua anotação</mat-label>
+        <textarea rows="23" matInput placeholder="Ex. Tenho inumeras tarefas a se fazer ..." [(ngModel)]="anotacao.anotacao" name="anotacao.anotacao"></textarea>
+    </mat-form-field>
+    <div class="buttons">
+    <button (click)="salvarAnotacao()" mat-stroked-button color="primary">Salvar Anotação</button>
+    <button (click)="cancel()" mat-stroked-button color="secondary">Voltar</button>
+    </div>
+</form>

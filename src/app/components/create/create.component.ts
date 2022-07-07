@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Anotacao } from 'src/app/models/Anotacao';
 import { GerenciadorTarefas } from 'src/app/models/GerenciadorTarefas';
 import { GerenciadorTarefasService } from 'src/app/services/gerenciador-tarefas.service';
 
@@ -9,6 +10,11 @@ import { GerenciadorTarefasService } from 'src/app/services/gerenciador-tarefas.
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
+
+  anotacao: Anotacao ={
+    id: '',
+    anotacao: ''
+  }
 
   gerenciadorTarefas: GerenciadorTarefas ={
     titulo: '',

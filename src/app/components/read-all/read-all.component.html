@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="badge">
-        <button class="buttonsPrincipais" mat-stroked-button color="secondary">Anotações <mat-icon>create</mat-icon> </button>
+    <div class="badge" >
+        <button class="buttonsPrincipais" routerLink="anotacoes/1" mat-stroked-button color="secondary">Anotações <mat-icon>create</mat-icon> </button>
         <button class="buttonsPrincipais" mat-stroked-button color="primary">Listagem de Feira <mat-icon>fastfood</mat-icon> </button>
         <button class="buttonsPrincipais" (click)="finalizados()" mat-stroked-button style="color: #009900;"  matBadge="{{closed}}" matBadgeColor="warn">Tarefas Finalizadas <mat-icon>done_all</mat-icon></button>
     </div>

@@ -25,6 +25,10 @@ export class ReadAllComponent implements OnInit {
     this.router.navigate(['/createtarefa'])
   }
 
+  createAnotacao(){
+    this.router.navigate(['/anotacoes'])
+  }
+
   findAll(){
     this.service.findAll().subscribe((resposta)=>{
       resposta.forEach(gerenciadorTarefas => {

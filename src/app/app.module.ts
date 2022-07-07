@@ -20,6 +20,7 @@ import { FinalizadosComponent } from './components/finalizados/finalizados.compo
 import { CreateComponent } from './components/create/create.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateComponent } from './components/update/update.component';
+import { CreateAnotacaoComponent } from './components/create-anotacao/create-anotacao.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UpdateComponent } from './components/update/update.component';
     ReadAllComponent,
     FinalizadosComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    CreateAnotacaoComponent
   ],
   imports: [
     BrowserModule,
