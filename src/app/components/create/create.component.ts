@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators  } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Anotacao } from 'src/app/models/Anotacao';
 import { GerenciadorTarefas } from 'src/app/models/GerenciadorTarefas';
@@ -10,7 +12,8 @@ import { GerenciadorTarefasService } from 'src/app/services/gerenciador-tarefas.
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
+  
+  formulario!:FormGroup;
   anotacao: Anotacao ={
     id: '',
     anotacao: ''
@@ -19,13 +22,20 @@ export class CreateComponent implements OnInit {
   gerenciadorTarefas: GerenciadorTarefas ={
     titulo: '',
     descricao: '',
-    dataParaFinalizar: new Date(),
+    dataParaFinalizar: new Date,
     finalizado: false
   }
 
-  constructor(private router: Router, private service: GerenciadorTarefasService) { }
+  constructor(private router: Router, private service: GerenciadorTarefasService, private formBuilder: FormBuilder, private dateAdapter: DateAdapter<any> ) {}
 
   ngOnInit(): void {
+    this.dateAdapter.setLocale('pt-br');
+    this.formulario = this.formBuilder.group({
+      dataParaFinalizar: [],
+      titulo: ['', [Validators.required, Validators.minLength(2)]],
+      descricao: ['', [Validators.required, Validators.minLength(2)]]
+    });
+    this.formulario.controls['dataParaFinalizar'].disable();
   }
 
   createTarefa(){

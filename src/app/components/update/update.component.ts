@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, NG_VALIDATORS } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GerenciadorTarefas } from 'src/app/models/GerenciadorTarefas';
 import { GerenciadorTarefasService } from 'src/app/services/gerenciador-tarefas.service';
@@ -10,6 +12,9 @@ import { GerenciadorTarefasService } from 'src/app/services/gerenciador-tarefas.
 })
 export class UpdateComponent implements OnInit {
 
+  form = new FormGroup({
+    dataParaFinalizar: new FormControl('')
+  })
   gerenciadorTarefas: GerenciadorTarefas ={
     titulo: '',
     descricao: '',
@@ -17,7 +22,7 @@ export class UpdateComponent implements OnInit {
     finalizado: false
   }
 
-  constructor(private router: Router, private service: GerenciadorTarefasService, private activatedRouter: ActivatedRoute) { }
+  constructor(private router: Router, private service: GerenciadorTarefasService, private activatedRouter: ActivatedRoute, private dateAdapter: DateAdapter<any>) { }
 
   ngOnInit(): void {
     this.gerenciadorTarefas.id = this.activatedRouter.snapshot.paramMap.get("id")!;
@@ -25,6 +30,7 @@ export class UpdateComponent implements OnInit {
   }
 
   findById(): void{
+    this.dateAdapter.setLocale('pt-br');
     this.formataData();
     this.service.findById(this.gerenciadorTarefas.id).subscribe((resposta)=>{
       this.gerenciadorTarefas = resposta;

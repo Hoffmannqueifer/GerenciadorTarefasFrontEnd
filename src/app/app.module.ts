@@ -21,6 +21,9 @@ import { CreateComponent } from './components/create/create.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateComponent } from './components/update/update.component';
 import { CreateAnotacaoComponent } from './components/create-anotacao/create-anotacao.component';
+import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,12 @@ import { CreateAnotacaoComponent } from './components/create-anotacao/create-ano
     FormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    CommonModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

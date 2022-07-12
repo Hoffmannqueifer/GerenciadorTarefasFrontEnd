@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Anotacao } from 'src/app/models/Anotacao';
 import { AnotacaoService } from 'src/app/services/anotacao.service';
@@ -9,16 +10,19 @@ import { AnotacaoService } from 'src/app/services/anotacao.service';
   styleUrls: ['./create-anotacao.component.css']
 })
 export class CreateAnotacaoComponent implements OnInit {
-
+  formulario!:FormGroup;
   variavelControle: boolean = false;
   anotacao: Anotacao = {
     anotacao: ''
   }
-  constructor(private router: Router, private service: AnotacaoService, private activatedRouter: ActivatedRoute) { }
+  constructor(private router: Router, private service: AnotacaoService, private formBuilder: FormBuilder, private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.anotacao.id = this.activatedRouter.snapshot.paramMap.get("id")!;
     this.findById();
+    this.formulario = this.formBuilder.group({
+      anotacao: ['', [Validators.required, Validators.minLength(2)]]
+    });
   }
 
   salvarAnotacao(){

@@ -4,8 +4,7 @@
             <h1>Atualizando sua tarefa</h1>
             <mat-form-field class="data-finalizar" >
                 <mat-label>Data para finalizar:</mat-label>
-                <input [(ngModel)]="gerenciadorTarefas.dataParaFinalizar" name="gerenciadorTarefas.dataParaFinalizar" matInput [matDatepicker]="dp3" disabled>
-                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                <input [(ngModel)]="gerenciadorTarefas.dataParaFinalizar" name="gerenciadorTarefas.dataParaFinalizar" matInput mask="00/00/0000">
                 <mat-datepicker #dp3 disabled="false"></mat-datepicker>
               </mat-form-field>
         
