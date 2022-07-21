@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +24,12 @@ import { CreateAnotacaoComponent } from './components/create-anotacao/create-ano
 import { CommonModule } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListagemFeiraComponent } from './components/listagem-feira/listagem-feira.component';
+import { MatTableModule } from '@angular/material/table'
+import { CurrencyMaskModule } from "ng2-currency-mask";
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -34,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FinalizadosComponent,
     CreateComponent,
     UpdateComponent,
-    CreateAnotacaoComponent
+    CreateAnotacaoComponent,
+    ListagemFeiraComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +62,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    CurrencyMaskModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

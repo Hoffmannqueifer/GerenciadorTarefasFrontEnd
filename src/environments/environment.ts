@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:8080/gerenciadortarefas',
-  baseAnotacaoUrl: 'http://localhost:8080/anotacoes'
+  baseAnotacaoUrl: 'http://localhost:8080/anotacoes',
+  baseListagemFeiraUrl: 'http://localhost:8080/listagem-feira'
 };
 
 /*

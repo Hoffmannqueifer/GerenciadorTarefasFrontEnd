@@ -5,4 +5,12 @@
     font-size: .8rem;
     height: 5%;
     text-shadow: #000 3px 2.2px 7px;
+    margin-top: 25px;
+    margin-bottom: 0%;
+    width: 100%;
 }
+
+p{
+    margin-bottom: auto;
+}
+

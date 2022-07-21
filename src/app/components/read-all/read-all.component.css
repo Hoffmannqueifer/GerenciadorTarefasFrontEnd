@@ -1,7 +1,4 @@
-.container{
-    width: 85%;
-    margin: auto;
-}
+
 
 .content{
     width: 100%;
@@ -27,6 +24,11 @@
         justify-content: center;
         align-items: center;
     }
+
+    .container{
+        width: 55%;
+        margin: auto;
+    }
 }
 
 @media(max-width: 400px){
@@ -39,6 +41,10 @@
         margin: 0.5rem;
         width: 100%;
         overflow-wrap:break-word;
+    }
+    .container{
+        width: 85%;
+        margin: auto;
     }
 }
 
